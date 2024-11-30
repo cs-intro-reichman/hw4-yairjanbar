@@ -36,7 +36,7 @@ public class KeywordsDetector {
                             }
                             m++;
                         }
-                        if(check) System.out.println(str1);
+                        if(check) System.out.println(sentences[n]);
                     }
                 }
 
