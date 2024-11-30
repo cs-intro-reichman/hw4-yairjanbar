@@ -156,13 +156,23 @@ public class ArrCharOps {
     public static int compareTo(String str1, String str2) {
         if(str1==""||str2=="") return -2;
         if (str1==str2) return 0;
+        if (str1.length()==str2.length()) {
+            for (int i=0;i<str1.length();i++) {
+                if (str1.charAt(i)!=str2.charAt(i)) {
+                    if (str1.charAt(i)<str2.charAt(i)) {
+                        return -1;
+                    }
+                    else return 1;
+                }
+            }
+        }
         if (str1.length()<str2.length()) {
             for (int i=0;i<str1.length();i++) {
                 if (str1.charAt(i)!=str2.charAt(i)) {
                     if (str1.charAt(i)<str2.charAt(i)) {
                         return -1;
                     }
-                    else return -2;
+                    else return 1;
                 }
             }
             return -1;
@@ -173,10 +183,10 @@ public class ArrCharOps {
                     if (str1.charAt(i)<str2.charAt(i)) {
                         return -1;
                     }
-                    else return -2;
+                    else return 1;
                 }
             }
-            return -2;
+            return 1;
         }
         return 0;
     }
