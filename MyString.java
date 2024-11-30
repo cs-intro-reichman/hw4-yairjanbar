@@ -19,12 +19,37 @@ public class MyString {
     /** Returns the lowercase version of the given string. */
     public static String lowerCase(String str) {
         // Replace the following statement with your code
-        return null;
+        char currentChar;
+        String newS="";
+        for (int i=0;i<str.length();i++) {
+            currentChar=str.charAt(i);
+            if (currentChar >= 'A' && currentChar <= 'Z') {
+                currentChar = (char) (currentChar +32);
+                newS += currentChar;
+            }
+            else {
+                newS += currentChar;
+            }
+        }
+        return newS;
     }
 
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
-        // Replace the following statement with your code
+        boolean check=false;
+        for (int i=0;i<str1.length();i++) {
+            if (str1.charAt(i)==str2.charAt(0)){
+                check=true;
+                int m=i;
+                for (int j=0;j<str2.length();j++){
+                    if (str1.charAt(m)!=str2.charAt(j)) {
+                        check=false;
+                    }
+                    m++;
+                }
+                return check;
+            }
+        }
         return false;
     }
 }
