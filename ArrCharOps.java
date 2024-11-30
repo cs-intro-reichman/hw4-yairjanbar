@@ -4,7 +4,7 @@ public class ArrCharOps {
     public static void main(String[] args) {
         String str = "clearly";
         char[] arr1 = {'c','l','e','a','r','l','y'};
-        char[] arr2 = {'U','n','d','e','r','s','t', 'o', 'o', 'd'};
+        char[] arr2 = {'U','n','d','e','r','s','t', 'o', 'o', 'd'};    
         System.out.println(str);  // Prints the string
         println(arr1);            // Prints an array of character
         System.out.println(charAt(arr1,2));      
@@ -121,14 +121,10 @@ public class ArrCharOps {
      */
     public static long hashCode(char[] arr) {
         long sum=0;
-        int n=1;
         int l=arr.length;
-        for (int i=0;i<l-1;i++) {
-            sum += arr[i]*7^(l-n);
-            if (n==1) n=2;
-            else n=1;
+        for (int i=0;i<l;i++) {
+            sum = sum + arr[i]* (long) Math.pow(7, l-i-1);
         }
-        sum+=arr[l];
         return sum;
     }
 
@@ -158,6 +154,7 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
+        if(str1==""||str2=="") return -2;
         if (str1==str2) return 0;
         if (str1.length()<str2.length()) {
             for (int i=0;i<str1.length();i++) {
