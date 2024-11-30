@@ -23,7 +23,7 @@ public class KeywordsDetector {
     public static void detectAndPrint(String[] sentences, String[] keywords) {
         for (int n=0;n<sentences.length;n++) {
             for (int k=0;k<keywords.length;k++) {
-                String str1= sentences[n], str2=keywords[k];
+                String str1= sentences[n].toLowerCase(), str2=keywords[k].toLowerCase();
                 boolean check=false;
                 for (int i=0;i<str1.length();i++) {
                     if (str1.charAt(i)==str2.charAt(0)){
